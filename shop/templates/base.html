@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+     <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+        <title> {% block title%}{% endblock %}</title>
+        <style> .cartbutton{ margin-right:300px;
+                    }
+                .user-avatar{
+                    max-width:40px;
+                    max-height:35px;
+                }
+                .user-btn{
+
+                    max-height:45px;
+                }
+                .search-input{
+                    margin-left:0px;
+
+
+                }
+                .mmodal-btn{
+                    max-width:80px;
+
+                }
+
+                .modal-header{
+                    color:blue;
+                    background-color:yellow;
+                }
+                .text-body{
+                    color:blue;
+                }
+
+                
+        @media only screen and (min-width: 768px) {
+            .app-heading{
+              font-size:24px;
+            }
+            .nav-links{
+              font-size:14px;
+            }
+            body{
+              font-size:14px;
+            }
+            .nav-links1{
+              margin-left:290px;
+            }
+          }
+
+        {% block css %}{% endblock %} </style>
+
+    </head>
+
+    <body>
+         <nav class="navbar navbar-expand-lg navbar-light bg-dark text-white pb-3 pt-2">
+            <a class="navbar-brand " href="/shop"><h1 class="text-white font-italic font-weight-bold app-heading">My Cart</h1></a>
+            <form class="form-inline  my-lg-0 pt-2 pb-3" method='GET' action="/search/">
+                    <input class="form-control mr-sm-2 search-input" type="search" name='search' id='search' placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0 font-weight-bold" type="submit">Search</button>
+            </form>
+
+
+            <button type="button" class="btn btn-danger mx-2  cartbutton" id="popcart" data-container="body" data-toggle="popover" data-placement="bottom" data-html="true" data-content="Vivamus
+                        sagittis lacus vel augue laoreet rutrum faucibus.">
+                Cart(<span id="cart">0</span>)
+                </a></button>
+            <a href="#" data-toggle="modal" data-target=".bd-example-modal-sm" >
+                <span class="btn btn-primary user-btn bg-light text-dark font-weight-bold text-italic"><img src="/static/shop/userlogo.jpeg" alt="Avatar" class="user-avatar">
+                User</span>
+            </a>
+
+
+                <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="text-body text-italic font-weight-bold " id="modal-heading"><span class="text-danger">My Cart</span></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+
+                        <div class="modal-body text-body  modal-body">
+                                <h6 class="text-success font-weight-bold" id="modalBody">Welcome to Mycart Mr.Baliram</h6>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+
+            <button class="navbar-toggler bg-light pt-2" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon bg-light"></span> </button>
+             <div class="collapse navbar-collapse" id="navbarNav">
+
+          <!-- Navbar links -->
+          <div class="nav-links1">
+            <ul class="navbar-nav ml-2">
+
+              <li class="nav-item">
+                <a class="nav-link text-white font-weight-bold" href="/shop"><h4 class="text-white font-italic nav-links">Home</h4></a>
+              </li>
+
+
+              <li class="nav-item">
+                <a class="nav-link" href="/shop/contact"><h4 class="text-white font-italic  nav-links">Contact Us</h4></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/shop/about"><h4 class="text-white font-italic  nav-links">About Us</h4></a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="/shop/tracker"><h4 class="text-white font-italic  nav-links">Tracker</h4></a>
+              </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/blog"><h4 class="text-white font-italic  nav-links">Blog</h4></a>
+              </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/shop/login"><h4 class="text-white font-italic  nav-links">Login</h4></a>
+              </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/shop/signup"><h4 class="text-white font-italic  nav-links">Signup</h4></a>
+              </li>
+
+
+
+            </ul>
+        </div>
+
+        </div>
+        </nav>
+                  {% block body%}{% endblock %}
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script>
+
+
+        {% block js %}{% endblock %}</script>
+        </body>
+</html>
+
+
+
+
+

@@ -1,0 +1,9 @@
+{% extends "base.html"%}
+
+{% block body %}
+<h1>View Cart</h1>
+
+    {{JSON.stringify(localStorage.getItem('cart'))}}
+
+{% endblock%}
+

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+     <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+        <title> {% block title%}{% endblock %}</title>
+        <style> .cartbutton{ margin-right:300px;
+                    }
+        {% block css %}{% endblock %} </style>
+
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-sm navbar-expand-md  bg-dark navbar-dark ">
+           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+          <!-- Brand -->
+          <a class="navbar-brand" href="/shop"><h2 class="text-white font-italic font-weight-bold">My Cart</h2></a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <!-- Navbar links -->
+            <ul class="navbar-nav ml-5">
+
+              <li class="nav-item">
+                <a class="nav-link text-white font-weight-bold" href="/shop">Home</a>
+              </li>
+
+
+              <li class="nav-item">
+                <a class="nav-link" href="/shop/contact">Contact Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/shop/about">About Us</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="/shop/tracker">Tracker</a>
+              </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link" href="/blog">Blog</a>
+              </li>
+
+
+            </ul>
+
+        </div>
+        </nav>
+                  {% block body%}{% endblock %}
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+       <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script>{% block js %}{% endblock %}</script>
+        </body>
+</html>
+
+
+
+
+
